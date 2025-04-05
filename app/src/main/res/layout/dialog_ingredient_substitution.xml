@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <TextView
+        android:id="@+id/text_dialog_substitute_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:textAppearance="?attr/textAppearanceHeadline6"
+        tools:text="Substitute for Chicken Breast?"/>
+
+    <TextView
+        android:id="@+id/text_dialog_substitute_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="@string/select_substitution_message"/>
+
+    <RadioGroup
+        android:id="@+id/radiogroup_substitutions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/radio_original"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="Use Chicken Breast (Original)" />
+
+        <RadioButton
+            android:id="@+id/radio_substitute_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="Use 2 Large Eggs" />
+
+        <RadioButton
+            android:id="@+id/radio_substitute_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="Use 1 can Tuna" />
+
+        <RadioButton
+            android:id="@+id/radio_substitute_3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="Use Halloumi Cheese" />
+
+    </RadioGroup>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="24dp"
+        android:gravity="end">
+
+        <Button
+            android:id="@+id/button_dialog_cancel"
+            style="@style/Widget.MaterialComponents.Button.TextButton.Dialog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="@android:string/cancel"/>
+
+        <Button
+            android:id="@+id/button_dialog_confirm"
+            style="@style/Widget.MaterialComponents.Button.TextButton.Dialog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/confirm_substitution"/>
+    </LinearLayout>
+
+</LinearLayout>
