@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".features.inventory.ui.list.InventoryListFragment">
+
+    <TextView
+        android:id="@+id/text_inventory_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/inventory_title"
+        android:textAppearance="?attr/textAppearanceHeadline5"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <HorizontalScrollView
+        android:id="@+id/scroll_sort_options"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:scrollbars="none"
+        app:layout_constraintTop_toBottomOf="@id/text_inventory_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chip_group_sort"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="16dp"
+            app:singleLine="true"
+            app:singleSelection="true">
+            <com.google.android.material.chip.Chip style="@style/Widget.MaterialComponents.Chip.Choice" android:id="@+id/chip_sort_name" android:text="@string/sort_by_name" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+            <com.google.android.material.chip.Chip style="@style/Widget.MaterialComponents.Chip.Choice" android:id="@+id/chip_sort_expiry" android:text="@string/sort_by_expiry" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+            <com.google.android.material.chip.Chip style="@style/Widget.MaterialComponents.Chip.Choice" android:id="@+id/chip_sort_added" android:text="@string/sort_by_date_added" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+        </com.google.android.material.chip.ChipGroup>
+    </HorizontalScrollView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view_inventory"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/item_inventory"
+        app:layout_constraintTop_toBottomOf="@id/scroll_sort_options"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_add_inventory_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:contentDescription="@string/content_desc_add_inventory_item"
+        android:src="@android:drawable/ic_menu_add"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/text_empty_inventory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/inventory_empty"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/scroll_sort_options"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <ProgressBar
+        android:id="@+id/progress_bar_inventory"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/scroll_sort_options"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".features.recipes.ui.nutrition.PostCookingNutritionFragment">
+
+    <TextView
+        android:id="@+id/text_nutrition_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/nutritional_facts_title"
+        android:textAppearance="?attr/textAppearanceHeadline5"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/text_nutrition_serving_size"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        tools:text="Per Serving (e.g., 1 sandwich)"
+        android:textAppearance="?attr/textAppearanceSubtitle1"
+        app:layout_constraintTop_toBottomOf="@id/text_nutrition_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <GridLayout
+        android:id="@+id/grid_nutrition_facts"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:columnCount="2"
+        android:rowCount="4"
+        app:layout_constraintTop_toBottomOf="@id/text_nutrition_serving_size"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView android:text="@string/nutrition_calories" style="@style/NutritionLabel"/>
+        <TextView android:id="@+id/text_nutrition_calories_value" tools:text="350 kcal" style="@style/NutritionValue"/>
+
+        <TextView android:text="@string/nutrition_protein" style="@style/NutritionLabel"/>
+        <TextView android:id="@+id/text_nutrition_protein_value" tools:text="25g" style="@style/NutritionValue"/>
+
+        <TextView android:text="@string/nutrition_carbs" style="@style/NutritionLabel"/>
+        <TextView android:id="@+id/text_nutrition_carbs_value" tools:text="30g" style="@style/NutritionValue"/>
+
+        <TextView android:text="@string/nutrition_fat" style="@style/NutritionLabel"/>
+        <TextView android:id="@+id/text_nutrition_fat_value" tools:text="15g" style="@style/NutritionValue"/>
+
+    </GridLayout>
+    <Button
+        android:id="@+id/button_log_meal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="@string/log_meal_to_tracker"
+        app:icon="@drawable/ic_track_nutrition"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
