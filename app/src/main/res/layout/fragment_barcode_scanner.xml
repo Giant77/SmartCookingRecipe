@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".features.inventory.ui.scan.BarcodeScannerFragment">
+
+<!--    <androidx.camera.view.PreviewView-->
+<!--        android:id="@+id/camera_preview_view"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="0dp"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"/>-->
+
+    <androidx.camera.view.PreviewView
+        android:id="@+id/camera_preview_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        tools:background="@android:color/darker_gray"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <View
+        android:id="@+id/viewfinder_overlay"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/barcode_scanner_overlay"
+        app:layout_constraintTop_toTopOf="@id/camera_preview_view"
+        app:layout_constraintBottom_toBottomOf="@id/camera_preview_view"
+        app:layout_constraintStart_toStartOf="@id/camera_preview_view"
+        app:layout_constraintEnd_toEndOf="@id/camera_preview_view"/>
+    <TextView
+        android:id="@+id/text_scanner_instructions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:padding="16dp"
+        android:background="#80000000"
+        android:textColor="@android:color/white"
+        android:text="@string/scan_barcode_instructions"
+        android:textAppearance="?attr/textAppearanceBody1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <ImageButton
+        android:id="@+id/button_toggle_flash"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@drawable/ic_notifications_black_24dp"
+        android:scaleType="centerInside"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:contentDescription="content_desc_toggle_flash"
+        app:tint="@android:color/white" />
+    <!--        android:src="@drawable/ic_flash_off"-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>

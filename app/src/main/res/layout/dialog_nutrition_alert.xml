@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <ImageView
+        android:id="@+id/image_alert_icon"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="16dp"
+        android:contentDescription="content_desc_alert_icon"
+        android:src="@android:drawable/stat_sys_warning"
+        app:tint="@color/orange" />
+    <TextView
+        android:id="@+id/text_alert_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:gravity="center_horizontal"
+        android:textAppearance="?attr/textAppearanceHeadline6"
+        tools:text="High Calorie Intake"/>
+
+    <TextView
+        android:id="@+id/text_alert_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:gravity="center_horizontal"
+        android:textAppearance="?attr/textAppearanceBody1"
+        tools:text="You have nearly reached your daily calorie goal."/>
+
+    <Button
+        android:id="@+id/button_alert_ok"
+        style="@style/Widget.MaterialComponents.Button.TextButton.Dialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@android:string/ok"/>
+
+</LinearLayout>

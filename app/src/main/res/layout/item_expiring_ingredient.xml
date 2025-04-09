@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="80dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:padding="8dp">
+
+    <ImageView
+        android:id="@+id/image_expiring_item_icon"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/ic_ingredient_placeholder"
+        android:contentDescription="content_desc_expiring_item_icon"/>
+
+    <TextView
+        android:id="@+id/text_expiring_item_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:textSize="12sp"
+        tools:text="Milk" />
+
+    <TextView
+        android:id="@+id/text_expiring_item_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="?attr/colorError"
+        android:textSize="12sp"
+        tools:text="Tomorrow" />
+
+</LinearLayout>
