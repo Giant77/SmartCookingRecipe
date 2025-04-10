@@ -13,6 +13,7 @@ navigationUi = "2.6.0"
 cameraView = "1.4.2"
 
 [libraries]
+circleindicator = { module = "me.relex:circleindicator", version = "2.1.6" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
