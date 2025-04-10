@@ -6,7 +6,28 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".features.recipes.ui.list.RecipeListFragment">
+    <LinearLayout
+        android:id="@+id/searchBarContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
+        <ImageButton
+            android:id="@+id/backButton"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@null"
+            android:padding="8dp"
+            android:src="@drawable/arrow_back"
+            android:contentDescription="Back"
+            android:scaleType="centerInside"
+            app:tint="@color/black" />
+    </LinearLayout>
     <TextView
         android:id="@+id/text_recipe_list_title"
         android:layout_width="wrap_content"

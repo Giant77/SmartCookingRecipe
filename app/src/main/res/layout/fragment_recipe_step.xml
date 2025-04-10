@@ -13,7 +13,7 @@
         android:layout_width="0dp"
         android:layout_height="200dp"
         android:scaleType="centerCrop"
-        android:src="@drawable/img_recipe_placeholder"
+        android:src="@drawable/img_launch_1"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -37,7 +37,8 @@
         android:layout_marginBottom="16dp"
         android:textAppearance="?attr/textAppearanceBody1"
         android:scrollbars="vertical"
-        tools:text="Instruction for this step goes here. It might be quite long, describing exactly what to do. Ensure ingredients are prepared. Mix the wet ingredients first, then add the dry ingredients slowly."
+        tools:text="Prep the Chicken. Marinate the chicken with olive oil and spices (garlic powder, paprika, salt, pepper) for at least 15 minutes. If you have time, let it sit in the fridge for 1–2 hours for deeper flavor."
+        android:justificationMode="inter_character"
         app:layout_constraintTop_toBottomOf="@id/text_step_number"
         app:layout_constraintBottom_toTopOf="@id/button_finish_cooking"
         app:layout_constraintStart_toStartOf="parent"
@@ -68,7 +69,7 @@
         android:layout_height="wrap_content"
         android:text="@string/finish_cooking"
         android:visibility="gone"
-        tools:visibility="visible"
+        tools:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
