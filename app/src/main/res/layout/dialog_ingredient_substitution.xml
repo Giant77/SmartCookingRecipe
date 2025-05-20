@@ -1,79 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:padding="24dp">
-
-    <TextView
-        android:id="@+id/text_dialog_substitute_title"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:textAppearance="?attr/textAppearanceHeadline6"
-        tools:text="Substitute for Chicken Breast?"/>
-
-    <TextView
-        android:id="@+id/text_dialog_substitute_message"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:text="@string/select_substitution_message"/>
-
-    <RadioGroup
-        android:id="@+id/radiogroup_substitutions"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <RadioButton
-            android:id="@+id/radio_original"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            tools:text="Use Chicken Breast (Original)" />
-
-        <RadioButton
-            android:id="@+id/radio_substitute_1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            tools:text="Use 2 Large Eggs" />
-
-        <RadioButton
-            android:id="@+id/radio_substitute_2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            tools:text="Use 1 can Tuna" />
-
-        <RadioButton
-            android:id="@+id/radio_substitute_3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            tools:text="Use Halloumi Cheese" />
-
-    </RadioGroup>
+    android:layout_margin="16dp"
+    android:backgroundTint="@android:color/white"
+    android:elevation="8dp"
+    android:radius="16dp"
+    android:padding="0dp"
+    android:background="#EEEEEE">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="24dp"
-        android:gravity="end">
+        android:orientation="vertical"
+        android:padding="24dp">
 
-        <Button
-            android:id="@+id/button_dialog_cancel"
-            style="@style/Widget.MaterialComponents.Button.TextButton.Dialog"
-            android:layout_width="wrap_content"
+        <!-- Title -->
+        <TextView
+            android:id="@+id/text_dialog_substitute_title"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:text="@android:string/cancel"/>
+            android:layout_marginBottom="12dp"
+            android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
+            android:textColor="@android:color/black"
+            tools:text="Substitute for Chicken Breast?" />
 
-        <Button
-            android:id="@+id/button_dialog_confirm"
-            style="@style/Widget.MaterialComponents.Button.TextButton.Dialog"
-            android:layout_width="wrap_content"
+        <!-- Message -->
+        <TextView
+            android:id="@+id/text_dialog_substitute_message"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/confirm_substitution"/>
+            android:layout_marginBottom="16dp"
+            android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+            android:textColor="@android:color/darker_gray"
+            android:text="@string/select_substitution_message" />
+
+        <!-- Options -->
+        <RadioGroup
+            android:id="@+id/radiogroup_substitutions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="8dp">
+
+            <RadioButton
+                android:id="@+id/radio_original"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Use Chicken Breast (Original)" />
+
+            <RadioButton
+                android:id="@+id/radio_substitute_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Use 2 Large Eggs" />
+
+            <RadioButton
+                android:id="@+id/radio_substitute_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Use 1 Can Tuna" />
+
+            <RadioButton
+                android:id="@+id/radio_substitute_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Use Halloumi Cheese" />
+        </RadioGroup>
+
+        <!-- Buttons -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:gravity="end"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/button_dialog_cancel"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@android:string/cancel"
+                android:textColor="?attr/colorPrimary" />
+
+            <Button
+                android:id="@+id/button_dialog_confirm"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/confirm_substitution"
+                android:textColor="?attr/colorPrimary" />
+        </LinearLayout>
     </LinearLayout>
-
-</LinearLayout>
+</androidx.cardview.widget.CardView>

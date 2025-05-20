@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:textAppearance="?attr/textAppearanceHeadline6"
-        tools:text="Step 1"
+        tools:text="Step 2"
         app:layout_constraintTop_toBottomOf="@id/image_step"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -37,8 +37,8 @@
         android:layout_marginBottom="16dp"
         android:textAppearance="?attr/textAppearanceBody1"
         android:scrollbars="vertical"
-        tools:text="Prep the Chicken. Marinate the chicken with olive oil and spices (garlic powder, paprika, salt, pepper) for at least 15 minutes. If you have time, let it sit in the fridge for 1–2 hours for deeper flavor."
         android:justificationMode="inter_character"
+        tools:text="Cook the Chicken. Grill or Pan-Sear: Heat a grill pan or skillet over medium-high heat. Cook the chicken for 5–6 minutes per side until it reaches an internal temp of 165°F (75°C).\nOptionally, melt cheese on top in the last 30 seconds of cooking."
         app:layout_constraintTop_toBottomOf="@id/text_step_number"
         app:layout_constraintBottom_toTopOf="@id/button_finish_cooking"
         app:layout_constraintStart_toStartOf="parent"

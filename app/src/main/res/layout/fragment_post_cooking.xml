@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="#EEEEEE"
+    tools:context=".features.recipes.ui.nutrition.PostCookingNutritionFragment">
+
+    <!-- CardView Container -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_recipe_summary"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="6dp"
+        app:cardBackgroundColor="#FFF8E1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/text_congrats_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Selamat! Kamu telah selesai memasak"
+                android:textAlignment="center"
+                android:textAppearance="?attr/textAppearanceHeadline6"
+                android:textStyle="bold"/>
+
+            <ImageView
+                android:id="@+id/image_recipe"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginTop="12dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/img_launch_1"
+                tools:src="@drawable/img_launch_1" />
+
+            <TextView
+                android:id="@+id/text_recipe_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="12dp"
+                android:text="Chicken Sandwich"
+                android:textAppearance="?attr/textAppearanceHeadline6"/>
+
+            <TextView
+                android:id="@+id/text_recipe_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="4dp"
+                android:text="Waktu Memasak: 20 menit | 350 kcal"
+                android:textAppearance="?attr/textAppearanceBody2"/>
+
+            <GridLayout
+                android:id="@+id/grid_nutrition_facts"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:columnCount="2"
+                android:rowCount="4">
+
+                <TextView android:text="Kalori" style="@style/NutritionLabel"/>
+                <TextView android:id="@+id/text_nutrition_calories_value" tools:text="350 kcal" style="@style/NutritionValue"/>
+
+                <TextView android:text="Protein" style="@style/NutritionLabel"/>
+                <TextView android:id="@+id/text_nutrition_protein_value" tools:text="25g" style="@style/NutritionValue"/>
+
+                <TextView android:text="Karbohidrat" style="@style/NutritionLabel"/>
+                <TextView android:id="@+id/text_nutrition_carbs_value" tools:text="30g" style="@style/NutritionValue"/>
+
+                <TextView android:text="Lemak" style="@style/NutritionLabel"/>
+                <TextView android:id="@+id/text_nutrition_fat_value" tools:text="15g" style="@style/NutritionValue"/>
+            </GridLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Tombol Masak Lagi dan Home (horizontal) -->
+    <LinearLayout
+        android:id="@+id/button_container"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp"
+        android:weightSum="2"
+        app:layout_constraintTop_toBottomOf="@id/card_recipe_summary"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <Button
+            android:id="@+id/button_cook_again"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Masak Lagi"/>
+
+        <View
+            android:layout_width="12dp"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/button_go_home"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Home"/>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
