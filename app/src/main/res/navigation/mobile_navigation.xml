@@ -15,11 +15,11 @@
         android:id="@+id/navigation_dashboard"
         android:name="com.example.smartcookingrecipe.ui.dashboard.DashboardFragment"
         android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_inventory_calendar" />
+        tools:layout="@layout/e3_inventory_calendar" />
 
     <fragment
         android:id="@+id/navigation_notifications"
         android:name="com.example.smartcookingrecipe.ui.notifications.NotificationsFragment"
         android:label="@string/title_nutrition"
-        tools:layout="@layout/fragment_daily_nutrition" />
+        tools:layout="@layout/f_daily_nutrition" />
 </navigation>
