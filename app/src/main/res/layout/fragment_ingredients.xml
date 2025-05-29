@@ -8,19 +8,6 @@
     android:padding="16dp"
     android:background="#FFFFFF">
 
-    <ImageButton
-        android:id="@+id/backButton"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:background="@null"
-        android:padding="8dp"
-        android:src="@drawable/arrow_back"
-        android:contentDescription="Back"
-        android:scaleType="centerInside"
-        app:tint="@color/black"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/titleText"
-        app:layout_constraintBottom_toBottomOf="@id/titleText" />
 
     <TextView
         android:id="@+id/titleText"
