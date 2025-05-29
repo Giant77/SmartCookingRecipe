@@ -48,9 +48,9 @@
 
                 <LinearLayout
                     android:id="@+id/prepareMealCard"
-                    android:layout_width="2dp"
+                    android:layout_width="0dp"
                     android:layout_weight="1"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:orientation="vertical"
                     android:gravity="center"
                     android:padding="12dp"
@@ -76,13 +76,11 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@+id/ManageIngredientsCard"
-                    android:layout_width="2dp"
+                    android:id="@+id/manageIngredientsCard"
+                    android:layout_width="0dp"
                     android:layout_weight="1"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
+                    android:layout_height="match_parent"                    android:orientation="vertical"
                     android:gravity="center"
-                    android:padding="12dp"
                     android:background="@drawable/card_white_rounded"
                     android:layout_margin="4dp"
                     android:clickable="true"
@@ -105,10 +103,10 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@+id/NutritionCard"
-                    android:layout_width="2dp"
+                    android:id="@+id/nutritionCard"
+                    android:layout_width="0dp"
                     android:layout_weight="1"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:orientation="vertical"
                     android:gravity="center"
                     android:padding="12dp"

@@ -5,8 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import com.example.smartcookingrecipe.databinding.FragmentRecipesBinding
+
 
 class RecipeFragment : Fragment() {
 
@@ -21,12 +21,29 @@ class RecipeFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val dashboardViewModel =
-            ViewModelProvider(this).get(RecipeViewModel::class.java)
-
         _binding = FragmentRecipesBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
+        binding.searchView.setOnSearchClickListener {
+            binding.textHomePlaceholder.visibility = View.GONE
+            // Animate width from wrap_content to match_parent
+            val params = binding.searchView.layoutParams
+            params.width = binding.searchBarContainer.width
+
+            binding.searchView.layoutParams = params
+        }
+
+        binding.searchView.setOnCloseListener {
+            // Reset UI on close icon press
+            binding.textHomePlaceholder.visibility = View.VISIBLE
+            val params = binding.searchView.layoutParams
+
+            params.width = ViewGroup.LayoutParams.WRAP_CONTENT
+            binding.searchView.layoutParams = params
+
+            // Return false to allow SearchView to close properly
+            return@setOnCloseListener false
+        }
 
         return root
     }

@@ -11,19 +11,6 @@
         android:layout_height="wrap_content"
         android:padding="16dp">
 
-        <ImageButton
-            android:id="@+id/backButton"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:background="@null"
-            android:padding="8dp"
-            android:src="@drawable/arrow_back"
-            android:contentDescription="Back"
-            android:scaleType="centerInside"
-            app:tint="@color/black"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@id/text_nutrition_tracking_title" app:layout_constraintBottom_toBottomOf="@id/text_nutrition_tracking_title" />
-
         <TextView
         android:id="@+id/text_nutrition_tracking_title"
         android:layout_width="wrap_content"
