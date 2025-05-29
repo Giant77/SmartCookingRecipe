@@ -22,7 +22,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="?attr/selectableItemBackgroundBorderless"
-        android:src="@drawable/ic_swap_horiz"
+        android:src="@drawable/cook"
         android:tooltipText="@string/tooltip_check_substitutions"
         android:contentDescription="content_desc_check_substitutions"
         android:visibility="gone"

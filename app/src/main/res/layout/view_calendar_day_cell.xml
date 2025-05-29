@@ -16,8 +16,7 @@
         android:layout_height="8dp"
         android:layout_gravity="bottom|center_horizontal"
         android:layout_marginBottom="4dp"
-        android:src="@drawable/ic_expiry_dot"
+        android:src="@drawable/cook"
         android:visibility="gone"
-        tools:visibility="visible"
-        android:contentDescription="@string/content_desc_expiry_indicator"/>
+        tools:visibility="visible"/>
 </FrameLayout>

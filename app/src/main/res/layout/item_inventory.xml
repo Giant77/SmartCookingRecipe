@@ -19,7 +19,7 @@
             android:id="@+id/image_inventory_item"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:src="@drawable/ic_ingredient_placeholder"
+            android:src="@drawable/cook"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"

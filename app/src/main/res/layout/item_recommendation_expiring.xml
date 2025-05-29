@@ -19,11 +19,10 @@
             android:layout_width="match_parent"
             android:layout_height="150dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/img_recipe_placeholder"
+            android:src="@drawable/cook"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:contentDescription="@string/content_desc_recommended_recipe_image"/>
+            app:layout_constraintEnd_toEndOf="parent" />
 
         <TextView
             android:id="@+id/text_recommended_recipe_name"
@@ -47,7 +46,7 @@
             android:textAppearance="?attr/textAppearanceBody2"
             android:textColor="?attr/colorPrimary"
             tools:text="Uses expiring Eggs"
-            app:drawableStartCompat="@drawable/ic_expiry_alert_small"
+            app:drawableStartCompat="@android:drawable/alert_light_frame"
             android:drawablePadding="4dp"
             app:layout_constraintTop_toBottomOf="@id/text_recommended_recipe_name"
             app:layout_constraintStart_toStartOf="parent"
