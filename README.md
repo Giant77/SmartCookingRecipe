@@ -13,4 +13,4 @@ Aplikasi resep memasak, dengan beberapa fitur utama seperti 'Prepare meal' yang 
 
 Kemudian ada fitur 'Ingredients inventory' yang dapat melacak bahan makanan yang digunakan pengguna. Pengguna dapat memasukkan informasi bahan masakan secara manual. Kemudian pengguna dapat melihat bahan makanan mereka dalam daftar bahan makanan, pengguna dapat mengetahui kapan tanggal kadaluarsa makanan sehingga memaksimal semua bahan makanan akan tergunakan dan tidak ada yang terbuang sia-sia.
 
-kemudian, ada fitur 'Track Nutrition' di mana setiap resep yang dimasak dihitung untuk menunjukkan kepada pengguna perkiraan nutrisi yang dikonsumsi seperti nilai karbohidrat, nilai total protein, total lemak, dan total kalori.
+Terakhir, ada fitur 'Track Nutrition' di mana setiap resep yang dimasak dihitung untuk menunjukkan kepada pengguna perkiraan nutrisi yang dikonsumsi seperti nilai karbohidrat, nilai total protein, total lemak, dan total kalori.
