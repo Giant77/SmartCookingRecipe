@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/navigation_home"
@@ -17,5 +18,5 @@
     <item
         android:id="@+id/navigation_nutrition"
         android:icon="@drawable/nutrition"
-        android:title="Nutrition"/>
+        android:title="@string/title_nutrition"/>
 </menu>
