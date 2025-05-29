@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.smartcookingrecipe.databinding.FragmentRecipesBinding
+import com.example.smartcookingrecipe.model.RecipeViewModel
 
 class RecipeFragment : Fragment() {
 
