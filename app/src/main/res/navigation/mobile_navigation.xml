@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
@@ -9,7 +10,7 @@
         android:id="@+id/navigation_home"
         android:name="com.example.smartcookingrecipe.ui.home.HomeFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/c1_activity_dashboard" />
 
     <fragment
         android:id="@+id/navigation_recipe"
@@ -21,7 +22,7 @@
         android:id="@+id/navigation_ingredients"
         android:name="com.example.smartcookingrecipe.ui.ingredients.IngredientsFragment"
         android:label="@string/title_ingredients"
-        tools:layout="@layout/fragment_ingredients" />
+        tools:layout="@layout/e1_ingredients" />
 
     <fragment
         android:id="@+id/navigation_nutrition"

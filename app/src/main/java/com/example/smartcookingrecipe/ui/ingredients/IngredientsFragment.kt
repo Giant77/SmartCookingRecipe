@@ -6,11 +6,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.example.smartcookingrecipe.databinding.FragmentIngredientsBinding
+import com.example.smartcookingrecipe.databinding.E1IngredientsBinding
 
 class IngredientsFragment : Fragment() {
 
-    private var _binding: FragmentIngredientsBinding? = null
+    private var _binding: E1IngredientsBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -24,7 +24,7 @@ class IngredientsFragment : Fragment() {
         val notificationsViewModel =
             ViewModelProvider(this).get(IngredientsViewModel::class.java)
 
-        _binding = FragmentIngredientsBinding.inflate(inflater, container, false)
+        _binding = E1IngredientsBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
 //        val textView: TextView = binding.textNotifications
