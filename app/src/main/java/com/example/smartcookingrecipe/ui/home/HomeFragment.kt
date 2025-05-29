@@ -5,29 +5,41 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
-import com.example.smartcookingrecipe.databinding.C1ActivityDashboardBinding
+import com.example.smartcookingrecipe.R
+import com.example.smartcookingrecipe.databinding.FragmentActivityDashboardBinding
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class HomeFragment : Fragment() {
 
-    private var _binding: C1ActivityDashboardBinding? = null
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
+    private var _binding: FragmentActivityDashboardBinding? = null
     private val binding get() = _binding!!
+
+    private lateinit var navView: BottomNavigationView
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val homeViewModel =
-            ViewModelProvider(this).get(HomeViewModel::class.java)
+        _binding = FragmentActivityDashboardBinding.inflate(inflater, container, false)
+        return binding.root
+    }
 
-        _binding = C1ActivityDashboardBinding.inflate(inflater, container, false)
-        val root: View = binding.root
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
-        return root
+        view.post {
+            navView = requireActivity().findViewById(R.id.nav_view)
+            binding.prepareMealCard.setOnClickListener {
+                navView.selectedItemId = R.id.navigation_recipe
+            }
+            binding.manageIngredientsCard.setOnClickListener {
+                navView.selectedItemId = R.id.navigation_ingredients
+            }
+            binding.nutritionCard.setOnClickListener {
+                navView.selectedItemId = R.id.navigation_nutrition
+            }
+        }
     }
 
     override fun onDestroyView() {
