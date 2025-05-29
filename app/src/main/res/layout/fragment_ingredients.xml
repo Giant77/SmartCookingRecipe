@@ -60,7 +60,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/your_ingredients_image" />
+                android:src="@drawable/cook"
+                />
 
             <TextView
                 android:id="@+id/textNewIngredients"
@@ -119,7 +120,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/your_calendar_image" />
+                android:src="@drawable/cook" />
 
             <Button
                 android:id="@+id/btnCheckExpiration"

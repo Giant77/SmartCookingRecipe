@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">SmartCookingRecipe</string>
     <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_recipe">Recipe</string>
+    <string name="title_ingredients">Ingredients</string>
     <string name="recipe_categories_title">Recipe Categories</string>
     <string name="no_recipes_found">No Recipe Found!</string>
     <string name="start_cooking">Cook!</string>

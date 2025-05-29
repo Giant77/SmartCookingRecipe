@@ -9,17 +9,18 @@
         android:id="@+id/navigation_home"
         android:name="com.example.smartcookingrecipe.ui.home.HomeFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_recipe_categories" />
+        tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.example.smartcookingrecipe.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_inventory_calendar" />
+        android:id="@+id/navigation_recipe"
+        android:name="com.example.smartcookingrecipe.ui.recipe.RecipeFragment"
+        android:label="@string/title_recipe"
+        tools:layout="@layout/fragment_recipes" />
+<!--    tools:layout="@layout/fragment_recipe_list"-->
 
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.example.smartcookingrecipe.ui.notifications.NotificationsFragment"
-        android:label="@string/title_nutrition"
-        tools:layout="@layout/fragment_daily_nutrition" />
+        android:id="@+id/navigation_ingredients"
+        android:name="com.example.smartcookingrecipe.ui.ingredients.IngredientsFragment"
+        android:label="@string/title_ingredients"
+        tools:layout="@layout/fragment_ingredients" />
 </navigation>

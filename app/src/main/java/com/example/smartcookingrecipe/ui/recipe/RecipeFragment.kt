@@ -1,4 +1,4 @@
-package com.example.smartcookingrecipe.ui.home
+package com.example.smartcookingrecipe.ui.recipe
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,11 +6,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.example.smartcookingrecipe.databinding.FragmentHomeBinding
+import com.example.smartcookingrecipe.databinding.FragmentRecipesBinding
 
-class HomeFragment : Fragment() {
+class RecipeFragment : Fragment() {
 
-    private var _binding: FragmentHomeBinding? = null
+    private var _binding: FragmentRecipesBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -21,11 +21,12 @@ class HomeFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val homeViewModel =
-            ViewModelProvider(this).get(HomeViewModel::class.java)
+        val dashboardViewModel =
+            ViewModelProvider(this).get(RecipeViewModel::class.java)
 
-        _binding = FragmentHomeBinding.inflate(inflater, container, false)
+        _binding = FragmentRecipesBinding.inflate(inflater, container, false)
         val root: View = binding.root
+
 
         return root
     }

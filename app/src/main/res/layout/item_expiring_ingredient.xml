@@ -12,7 +12,7 @@
         android:id="@+id/image_expiring_item_icon"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:src="@drawable/ic_ingredient_placeholder"
+        android:src="@drawable/cook"
         android:contentDescription="content_desc_expiring_item_icon"/>
 
     <TextView
