@@ -6,6 +6,7 @@
     android:id="@+id/mobile_navigation"
     app:startDestination="@+id/navigation_home">
 
+<!--    Bottom Navbar-->
     <fragment
         android:id="@+id/navigation_home"
         android:name="com.example.smartcookingrecipe.ui.home.HomeFragment"
@@ -23,11 +24,32 @@
         android:id="@+id/navigation_ingredients"
         android:name="com.example.smartcookingrecipe.ui.ingredients.IngredientsFragment"
         android:label="@string/title_ingredients"
-        tools:layout="@layout/fragment_ingredients" />
+        tools:layout="@layout/fragment_ingredients">
+
+        <action
+            android:id="@+id/act_ingredients_to_recordIngredients"
+            app:destination="@id/fragmentRecordIngredients" />
+        <action
+            android:id="@+id/act_ingredients_to_ingredientsList"
+            app:destination="@id/fragmentIngredientsList" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_nutrition"
         android:name="com.example.smartcookingrecipe.ui.nutrition.NutritionFragment"
         android:label="@string/title_nutrition"
         tools:layout="@layout/fragment_daily_nutrition" />
+
+<!--    Misc-->
+    <fragment
+        android:id="@+id/fragmentRecordIngredients"
+        android:name="com.example.smartcookingrecipe.ui.ingredients.RecordIngredientsFragment"
+        tools:layout="@layout/fragment_inventory_add_edit"
+        android:label="Record Ingredients" />
+
+    <fragment
+        android:id="@+id/fragmentIngredientsList"
+        android:name="com.example.smartcookingrecipe.ui.ingredients.CheckIngredientsFragment"
+        tools:layout="@layout/fragment_inventory_list"
+        android:label="Record Ingredients" />
 </navigation>

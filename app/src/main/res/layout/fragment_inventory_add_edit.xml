@@ -4,13 +4,28 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".features.inventory.ui.addedit.AddEditIngredientFragment">
+    android:layout_height="match_parent">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="16dp">
+
+        <ImageButton
+            android:id="@+id/backButton"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@null"
+            android:padding="8dp"
+            android:src="@drawable/arrow_back"
+            android:contentDescription="Back"
+            android:scaleType="centerInside"
+            app:tint="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/text_add_edit_title"
+            app:layout_constraintBottom_toBottomOf="@id/text_add_edit_title"
+            android:layout_marginStart="16dp"/>
+
 
         <TextView
             android:id="@+id/text_add_edit_title"
@@ -67,6 +82,7 @@
             app:layout_constraintTop_toBottomOf="@id/image_add_edit_item"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent">
+
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edit_text_item_name"
                 android:layout_width="match_parent"

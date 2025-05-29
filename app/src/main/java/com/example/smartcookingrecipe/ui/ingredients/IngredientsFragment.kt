@@ -5,16 +5,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
+import com.example.smartcookingrecipe.R
 import com.example.smartcookingrecipe.databinding.FragmentIngredientsBinding
-import com.example.smartcookingrecipe.model.IngredientsViewModel
 
 class IngredientsFragment : Fragment() {
 
     private var _binding: FragmentIngredientsBinding? = null
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -22,15 +20,15 @@ class IngredientsFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val notificationsViewModel =
-            ViewModelProvider(this).get(IngredientsViewModel::class.java)
-
         _binding = FragmentIngredientsBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-//        val textView: TextView = binding.textNotifications
-        notificationsViewModel.text.observe(viewLifecycleOwner) {
-//            textView.text = it
+        binding.btnRecordIngredients.setOnClickListener {
+            findNavController().navigate(R.id.act_ingredients_to_recordIngredients)
+        }
+
+        binding.btnCheckExpiration.setOnClickListener {
+            findNavController().navigate(R.id.act_ingredients_to_ingredientsList)
         }
         return root
     }
