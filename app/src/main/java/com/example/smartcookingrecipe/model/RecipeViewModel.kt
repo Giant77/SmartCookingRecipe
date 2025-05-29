@@ -1,13 +1,13 @@
-package com.example.smartcookingrecipe.ui.nutrition
+package com.example.smartcookingrecipe.model
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class NutritionViewModel : ViewModel() {
+class RecipeViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
-        value = "This is Nutritions Fragment"
+        value = "This is dashboard Fragment"
     }
     val text: LiveData<String> = _text
 }

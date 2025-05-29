@@ -1,4 +1,4 @@
-package com.example.smartcookingrecipe.ui.ingredients
+package com.example.smartcookingrecipe.model
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
