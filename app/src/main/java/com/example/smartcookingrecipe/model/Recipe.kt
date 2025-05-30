@@ -5,7 +5,7 @@ import kotlinx.serialization.json.JsonElement
 
 @Serializable
 data class Recipe(
-    val recipe_id: Long = 0,
+    val recipe_id: Long = 0, // Ensure this is present
     val title: String,
     val description: String? = null,
     val category: String? = null,
@@ -17,7 +17,6 @@ data class Recipe(
     val calory: Float? = null,
     val image_url: String? = null
 )
-
 // Data class baru untuk merepresentasikan seksi kategori di UI
 data class CategoryRecipeSection(
     val categoryName: String,

@@ -37,5 +37,17 @@ class RecipeRepository(private val supabase: SupabaseClient) {
                 }
             }
     }
+
+    suspend fun getRecipeById(recipeId: Long): Recipe? = withContext(Dispatchers.IO) {
+        val response = supabase
+            .from("recipes")
+            .select() {
+                filter {
+                    eq("recipe_id", recipeId)
+                }
+            }
+            .decodeSingle<Recipe>()
+        response
+    }
 }
 

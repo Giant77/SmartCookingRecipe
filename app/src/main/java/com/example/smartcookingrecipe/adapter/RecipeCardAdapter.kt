@@ -1,14 +1,18 @@
 package com.example.smartcookingrecipe.adapter
 
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.smartcookingrecipe.R // Ganti dengan package Anda
 import com.example.smartcookingrecipe.model.CategoryRecipeSection
 import com.example.smartcookingrecipe.model.Recipe
+import com.example.smartcookingrecipe.ui.recipe.RecipeAdapter
 
 // Asumsi Anda sudah memiliki RecipeAdapter untuk item_recipe_main.xml
 // Jika belum, Anda perlu membuatnya. Contoh sederhana:
@@ -28,11 +32,13 @@ class RecipeCardAdapter(private val recipes: List<Recipe>) : RecyclerView.Adapte
     override fun getItemCount(): Int = recipes.size
 
     class RecipeViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        // Misal di item_recipe_main.xml ada TextView untuk judul resep
-        private val recipeTitle: TextView = itemView.findViewById(R.id.textViewCategoryName) // Ganti dengan ID yang benar
+        private val recipeImage: ImageView = itemView.findViewById(R.id.image_recipe)
+        private val recipeName: TextView = itemView.findViewById(R.id.text_recipe_name)
+        // private val recipeShortDesc: TextView = itemView.findViewById(R.id.text_recipe_short_desc)
 
         fun bind(recipe: Recipe) {
-            recipeTitle.text = recipe.title
+            recipeName.text = recipe.title
+            // recipeShortDesc.text = recipe.description ?: "No description"
             // Bind data lain seperti gambar, deskripsi, dll.
         }
     }
@@ -58,7 +64,7 @@ class CategorySectionAdapter(
 
     fun updateData(newCategorySections: List<CategoryRecipeSection>) {
         categorySections = newCategorySections
-        notifyDataSetChanged() // Atau gunakan DiffUtil untuk performa lebih baik
+        notifyDataSetChanged()
     }
 
     inner class CategorySectionViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -67,15 +73,19 @@ class CategorySectionAdapter(
 
         fun bind(categorySection: CategoryRecipeSection) {
             categoryNameTextView.text = categorySection.categoryName
-            // Atur warna teks kategori jika perlu, misal berdasarkan nama kategori atau dari data
-            // categoryNameTextView.setTextColor(ContextCompat.getColor(itemView.context, R.color.some_color))
 
-            // Setup nested RecyclerView untuk resep
-            recipesRecyclerView.layoutManager = LinearLayoutManager(itemView.context, LinearLayoutManager.HORIZONTAL, false)
+            recipesRecyclerView.layoutManager = LinearLayoutManager(
+                itemView.context,
+                LinearLayoutManager.HORIZONTAL,
+                false
+            )
 
-            // Gunakan adapter resep yang sudah ada atau buat yang baru jika itemnya berbeda
-            // Pastikan item_recipe_main.xml sesuai dengan yang diharapkan oleh RecipeCardAdapter
-            val recipeAdapter = RecipeCardAdapter(categorySection.recipes) // Atau adapter lain yang sesuai
+            val recipeAdapter = RecipeAdapter(categorySection.recipes) { recipe ->
+                // Handle item click here to navigate to RecipeDetailsFragment
+                val bundle = Bundle()
+                bundle.putLong("recipeId", recipe.recipe_id)
+                itemView.findNavController().navigate(R.id.act_recipes_to_recipeDetails, bundle)
+            }
             recipesRecyclerView.adapter = recipeAdapter
         }
     }
