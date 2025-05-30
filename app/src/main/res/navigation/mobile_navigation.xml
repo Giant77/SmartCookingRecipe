@@ -22,7 +22,16 @@
         android:id="@+id/navigation_recipe"
         android:name="com.example.smartcookingrecipe.ui.recipe.RecipeFragment"
         android:label="@string/title_recipe"
-        tools:layout="@layout/fragment_recipes" />
+        tools:layout="@layout/fragment_recipes" >
+
+        <action
+            android:id="@+id/act_recipes_to_recipeDetails"
+            app:destination="@id/fragmentRecipeDetails">
+            <argument
+                android:name="recipeId"
+                app:argType="long" />
+        </action>
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_ingredients"
@@ -64,6 +73,9 @@
         tools:layout="@layout/fragment_recipe_detail"
         android:label="Recipe Information" >
 
+        <argument
+            android:name="recipeId"
+            app:argType="long" />
         <action
             android:id="@+id/act_recipeDetails_to_recipeSteps"
             app:destination="@id/fragmentRecipeSteps" />

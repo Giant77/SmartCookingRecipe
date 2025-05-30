@@ -5,9 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import com.example.smartcookingrecipe.databinding.FragmentDailyNutritionBinding
-import com.example.smartcookingrecipe.model.NutritionViewModel
 
 class NutritionFragment : Fragment() {
 
@@ -21,9 +19,6 @@ class NutritionFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val dashboardViewModel =
-            ViewModelProvider(this).get(NutritionViewModel::class.java)
-
         _binding = FragmentDailyNutritionBinding.inflate(inflater, container, false)
         val root: View = binding.root
 

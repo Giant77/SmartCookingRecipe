@@ -14,17 +14,6 @@ class RecipeRepository(private val supabase: SupabaseClient) {
         response.decodeList<Recipe>()
     }
 
-//    suspend fun getById(id: Long): Recipe? = withContext(Dispatchers.IO) {
-//        val response = supabase.postgrest["recipes"]
-//            .select {
-//                filter {
-//                    eq("recipe_id", id)
-//                    single()
-//                }
-//            }
-//        response.decode<Recipe>()
-//    }
-
     suspend fun insert(recipe: Recipe) = withContext(Dispatchers.IO) {
         supabase.postgrest["recipes"].insert(recipe)
     }
@@ -47,6 +36,18 @@ class RecipeRepository(private val supabase: SupabaseClient) {
                     eq("recipe_id", id)
                 }
             }
+    }
+
+    suspend fun getRecipeById(recipeId: Long): Recipe? = withContext(Dispatchers.IO) {
+        val response = supabase
+            .from("recipes")
+            .select() {
+                filter {
+                    eq("recipe_id", recipeId)
+                }
+            }
+            .decodeSingle<Recipe>()
+        response
     }
 }
 
