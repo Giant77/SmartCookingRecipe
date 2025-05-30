@@ -1,11 +1,19 @@
 package com.example.smartcookingrecipe.ui.recipe
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.smartcookingrecipe.adapter.CategorySectionAdapter
+import com.example.smartcookingrecipe.auth.SupabaseClientInstance
 import com.example.smartcookingrecipe.databinding.FragmentRecipesBinding
+import com.example.smartcookingrecipe.model.CategoryRecipeSection
+import com.example.smartcookingrecipe.repository.RecipeRepository
+import kotlinx.coroutines.launch
 
 
 class RecipeFragment : Fragment() {
@@ -46,6 +54,32 @@ class RecipeFragment : Fragment() {
 
         return root
     }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val recipeRepository = RecipeRepository(SupabaseClientInstance.getClient())
+
+        lifecycleScope.launch {
+            val recipes = recipeRepository.getAll()
+
+            Log.d("RecipeFragment", "Fetched recipes: ${recipes.size}") // First log
+
+            val groupedByCategory = recipes
+                .groupBy { it.category ?: "Uncategorized" }
+                .map { (category, items) ->
+                    CategoryRecipeSection(categoryName = category, recipes = items)
+                }
+
+            Log.d("RecipeFragment", "Adapter set with ${groupedByCategory.size} categories") // Second log
+
+            val adapter = CategorySectionAdapter(groupedByCategory)
+            binding.recyclerViewCategorySections.layoutManager = LinearLayoutManager(requireContext())
+            binding.recyclerViewCategorySections.adapter = adapter
+        }
+    }
+
+
 
     override fun onDestroyView() {
         super.onDestroyView()

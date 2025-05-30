@@ -36,7 +36,6 @@ class RecipeAdapter(
     inner class RecipeViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val recipeImage: ImageView = itemView.findViewById(R.id.image_recipe)
         private val recipeName: TextView = itemView.findViewById(R.id.text_recipe_name)
-        private val recipeShortDesc: TextView = itemView.findViewById(R.id.text_recipe_short_desc)
 
         init {
             itemView.setOnClickListener {
@@ -49,7 +48,6 @@ class RecipeAdapter(
 
         fun bind(recipe: Recipe) {
             recipeName.text = recipe.title
-            recipeShortDesc.text = recipe.description ?: "No description available" // Handle jika deskripsi null
 
             if (!recipe.image_url.isNullOrEmpty()) {
                 Glide.with(itemView.context)

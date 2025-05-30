@@ -7,6 +7,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     kotlin("plugin.serialization") version "1.9.24"
+    id("androidx.navigation.safeargs.kotlin")
 }
 
 if (localPropertiesFile.exists()) {
