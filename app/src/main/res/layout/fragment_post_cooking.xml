@@ -42,8 +42,8 @@
                 android:layout_height="200dp"
                 android:layout_marginTop="12dp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/img_launch_1"
-                tools:src="@drawable/img_launch_1" />
+                android:src="@drawable/classic_peanut"
+                tools:src="@drawable/classic_peanut" />
 
             <TextView
                 android:id="@+id/text_recipe_name"
@@ -51,7 +51,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="12dp"
-                android:text="Chicken Sandwich"
+                android:text="Classic Peanut Butter Toast"
                 android:textAppearance="?attr/textAppearanceHeadline6"/>
 
             <TextView
@@ -60,7 +60,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="4dp"
-                android:text="Waktu Memasak: 20 menit | 350 kcal"
+                android:text="Waktu Memasak: 8 menit | 220 kcal"
                 android:textAppearance="?attr/textAppearanceBody2"/>
 
             <GridLayout
@@ -71,17 +71,33 @@
                 android:columnCount="2"
                 android:rowCount="4">
 
-                <TextView android:text="Kalori" style="@style/NutritionLabel"/>
-                <TextView android:id="@+id/text_nutrition_calories_value" tools:text="350 kcal" style="@style/NutritionValue"/>
+                <TextView
+                    android:text="Kalori" style="@style/NutritionLabel"/>
+                <TextView
+                    android:id="@+id/text_nutrition_calories_value"
+                    android:text="220 kcal" style="@style/NutritionValue"/>
 
-                <TextView android:text="Protein" style="@style/NutritionLabel"/>
-                <TextView android:id="@+id/text_nutrition_protein_value" tools:text="25g" style="@style/NutritionValue"/>
+                <TextView
+                    android:text="Protein" style="@style/NutritionLabel"/>
 
-                <TextView android:text="Karbohidrat" style="@style/NutritionLabel"/>
-                <TextView android:id="@+id/text_nutrition_carbs_value" tools:text="30g" style="@style/NutritionValue"/>
+                <TextView
+                    android:id="@+id/text_nutrition_protein_value"
+                    style="@style/NutritionValue"
+                    android:layout_height="wrap_content"
+                    android:text="7g" />
+
+                <TextView
+                    android:text="Karbohidrat" style="@style/NutritionLabel"/>
+
+                <TextView
+                    android:id="@+id/text_nutrition_carbs_value"
+                    android:text="20g" style="@style/NutritionValue"/>
 
                 <TextView android:text="Lemak" style="@style/NutritionLabel"/>
-                <TextView android:id="@+id/text_nutrition_fat_value" tools:text="15g" style="@style/NutritionValue"/>
+
+                <TextView
+                    android:id="@+id/text_nutrition_fat_value"
+                    android:text="12g" style="@style/NutritionValue"/>
             </GridLayout>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
