@@ -56,4 +56,16 @@
     <string name="title_inventory">Inventory</string>
     <string name="title_nutrition">Nutrition</string>
     <string name="upload_image">Upload Gambar</string>
+
+    <string-array name="units_array">
+        <item>pcs</item>
+        <item>kilograms</item>
+        <item>grams</item>
+        <item>milligrams</item>
+        <item>liter</item>
+        <item>tablespoon</item>
+        <item>milliliter</item>
+        <item>teaspoon</item>
+    </string-array>
+
 </resources>

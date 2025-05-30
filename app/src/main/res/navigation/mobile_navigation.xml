@@ -93,5 +93,13 @@
         android:id="@+id/fragmentPostCooking"
         android:name="com.example.smartcookingrecipe.ui.recipeDetails.FinishCookingFragment"
         tools:layout="@layout/fragment_post_cooking"
-        android:label="Finish Cooking" />
+        android:label="Finish Cooking" >
+
+        <action
+            android:id="@+id/act_postCooking_to_home"
+            app:destination="@id/navigation_home" />
+        <action
+            android:id="@+id/act_postCooking_to_nutrition"
+            app:destination="@id/navigation_nutrition" />
+    </fragment>
 </navigation>

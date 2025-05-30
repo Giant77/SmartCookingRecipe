@@ -95,13 +95,14 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="4dp"
             android:hint="@string/hint_quantity"
             app:layout_constraintTop_toBottomOf="@id/input_layout_item_name"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toStartOf="@id/input_layout_unit"
             app:layout_constraintHorizontal_weight="1">
+
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edit_text_quantity"
                 android:layout_width="match_parent"
@@ -111,24 +112,27 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/input_layout_unit"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
+            android:layout_marginStart="4dp"
             android:hint="@string/hint_unit"
+            app:boxBackgroundMode="outline"
             app:layout_constraintTop_toTopOf="@id/input_layout_quantity"
             app:layout_constraintBottom_toBottomOf="@id/input_layout_quantity"
             app:layout_constraintStart_toEndOf="@id/input_layout_quantity"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_weight="1">
-            <AutoCompleteTextView
-                android:id="@+id/autocomplete_unit"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="none"
-                tools:text="Grams"/>
-        </com.google.android.material.textfield.TextInputLayout>
 
+            <Spinner
+                android:id="@+id/spinner_unit"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:gravity="center_vertical"
+                tools:entries="@array/units_array" />
+        </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/input_layout_expiry_date"
@@ -148,8 +152,10 @@
                 android:id="@+id/edit_text_expiry_date"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:focusable="false"
-                android:inputType="date" />
+                android:inputType="date"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:clickable="true"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
