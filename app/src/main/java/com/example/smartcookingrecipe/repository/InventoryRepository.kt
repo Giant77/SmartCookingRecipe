@@ -2,6 +2,7 @@ package com.example.smartcookingrecipe.repository
 
 import com.example.smartcookingrecipe.model.Inventory
 import io.github.jan.supabase.SupabaseClient
+import io.github.jan.supabase.postgrest.from
 import io.github.jan.supabase.postgrest.postgrest
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -9,13 +10,15 @@ import kotlinx.coroutines.withContext
 class InventoryRepository(private val supabase: SupabaseClient) {
 
     suspend fun getInventoryByUser(userId: String): List<Inventory> = withContext(Dispatchers.IO) {
-        val result = supabase.postgrest["inventory"]
+        val result = supabase
+            .from("inventory")
             .select {
                 filter {
                     eq("user_id", userId)
                 }
             }
-        result.decodeList<Inventory>()
+
+        return@withContext result.decodeList<Inventory>()
     }
 
     suspend fun addInventory(item: Inventory) {
