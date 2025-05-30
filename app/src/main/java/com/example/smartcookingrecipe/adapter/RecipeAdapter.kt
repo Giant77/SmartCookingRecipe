@@ -1,4 +1,4 @@
-package com.example.smartcookingrecipe.adapter
+package com.example.smartcookingrecipe.ui.recipe
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,49 +6,61 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-//import com.bumptech.glide.Glide
-import com.example.smartcookingrecipe.model.Recipe
+import com.bumptech.glide.Glide
 import com.example.smartcookingrecipe.R
+import com.example.smartcookingrecipe.model.Recipe
 
 class RecipeAdapter(
-    private var list: List<Recipe>,
-    private val onItemClick: ((Recipe) -> Unit)? = null
-) : RecyclerView.Adapter<RecipeAdapter.ViewHolder>() {
+    private var recipes: List<Recipe>,
+    private val onItemClick: (Recipe) -> Unit
+) : RecyclerView.Adapter<RecipeAdapter.RecipeViewHolder>() {
 
-    inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val imageRecipe: ImageView = view.findViewById(R.id.image_recipe)
-        val textRecipeName: TextView = view.findViewById(R.id.text_recipe_name)
-        val textRecipeDesc: TextView = view.findViewById(R.id.text_recipe_short_desc)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecipeViewHolder {
+        val view = LayoutInflater.from(parent.context)
+            .inflate(R.layout.item_recipe_main, parent, false)
+        return RecipeViewHolder(view)
+    }
+
+    override fun onBindViewHolder(holder: RecipeViewHolder, position: Int) {
+        val recipe = recipes[position]
+        holder.bind(recipe)
+    }
+
+    override fun getItemCount(): Int = recipes.size
+
+    fun updateData(newRecipes: List<Recipe>) {
+        recipes = newRecipes
+        notifyDataSetChanged()
+    }
+
+    inner class RecipeViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        private val recipeImage: ImageView = itemView.findViewById(R.id.image_recipe)
+        private val recipeName: TextView = itemView.findViewById(R.id.text_recipe_name)
+        private val recipeShortDesc: TextView = itemView.findViewById(R.id.text_recipe_short_desc)
 
         init {
-            view.setOnClickListener {
-                onItemClick?.invoke(list[adapterPosition])
+            itemView.setOnClickListener {
+                val position = adapterPosition
+                if (position != RecyclerView.NO_POSITION) {
+                    onItemClick(recipes[position])
+                }
             }
         }
-    }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.item_recipe, parent, false)
-        return ViewHolder(view)
-    }
+        fun bind(recipe: Recipe) {
+            recipeName.text = recipe.title
+            recipeShortDesc.text = recipe.description ?: "No description available" // Handle jika deskripsi null
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val recipe = list[position]
-        holder.textRecipeName.text = recipe.title
-        holder.textRecipeDesc.text = recipe.description ?: ""
-
-//        Glide.with(holder.itemView.context)
-//            .load(recipe.image_url)
-//            .placeholder(R.drawable.img_launch_1)
-//            .centerCrop()
-//            .into(holder.imageRecipe)
-    }
-
-    override fun getItemCount(): Int = list.size
-
-    fun updateData(newList: List<Recipe>) {
-        list = newList
-        notifyDataSetChanged()
+            if (!recipe.image_url.isNullOrEmpty()) {
+                Glide.with(itemView.context)
+                    .load(recipe.image_url)
+                    .placeholder(R.mipmap.ic_launcher) // Ganti dengan placeholder yang sesuai
+                    .error(R.mipmap.ic_launcher_round) // Ganti dengan gambar error yang sesuai
+                    .into(recipeImage)
+            } else {
+                // Set gambar placeholder default jika tidak ada image_url
+                recipeImage.setImageResource(R.mipmap.ic_launcher) // Ganti dengan placeholder default Anda
+            }
+        }
     }
 }

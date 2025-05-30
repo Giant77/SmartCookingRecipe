@@ -80,5 +80,8 @@ dependencies {
     implementation("io.ktor:ktor-client-core:$ktorVersion")
     implementation("io.ktor:ktor-utils:$ktorVersion")
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.3")
+
+//    implementation("io.coil-kt:coil:2.5.0")
+    implementation ("com.github.bumptech.glide:glide:4.16.0")
 }
 
