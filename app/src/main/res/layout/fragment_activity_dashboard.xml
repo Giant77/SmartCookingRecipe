@@ -178,9 +178,10 @@
                         android:layout_marginBottom="12dp"/>
 
                     <Button
+                        android:id="@+id/btn_view_recipe"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Cook Now"
+                        android:text="Check Details"
                         android:textColor="@android:color/white"
                         android:backgroundTint="#FF6F00"
                         android:paddingHorizontal="24dp"/>

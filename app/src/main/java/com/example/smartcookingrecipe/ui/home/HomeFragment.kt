@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.example.smartcookingrecipe.R
 import com.example.smartcookingrecipe.databinding.FragmentActivityDashboardBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -27,6 +28,10 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        binding.btnViewRecipe.setOnClickListener {
+            findNavController().navigate(R.id.act_home_to_recipeDetails)
+        }
 
         view.post {
             navView = requireActivity().findViewById(R.id.nav_view)
