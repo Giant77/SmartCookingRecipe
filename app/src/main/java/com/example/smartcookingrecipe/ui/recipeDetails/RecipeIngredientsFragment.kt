@@ -1,4 +1,4 @@
-package com.example.smartcookingrecipe.ui.recipe
+package com.example.smartcookingrecipe.ui.recipeDetails
 
 import android.os.Bundle
 import android.view.LayoutInflater

@@ -1,4 +1,4 @@
-package com.example.smartcookingrecipe.ui.recipe
+package com.example.smartcookingrecipe.ui.recipeDetails
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -30,8 +30,8 @@ class RecipeDetailsFragment : Fragment() {
         val recipeDescription: TextView = binding.textRecipeDetailDescription
         val recipeMetaInfo: TextView = binding.textRecipeMetaInfo
 
-        recipeTitle.text = "Mediterranean Quinoa Bowl"
-        recipeDescription.text = "A protein-packed bowl with quinoa, chickpeas, cucumber, tomatoes, and feta cheese, dressed with lemon and olive oil."
+        recipeTitle.text = "Classic Chicken Sandwich"
+        recipeDescription.text = "A straightforward, flavorful chicken sandwich built on simple techniques and staple ingredients. Marinated chicken, infused with garlic and paprika, is seared or grilled for maximum flavor. Cheese optional. Served on a toasted, buttered bun with crisp lettuce, fresh tomato, and sauce of choice. Balanced in texture and taste. Efficient execution with minimal complexity."
         recipeMetaInfo.text = "Prep: 10 min | Cook: 15 min | Difficulty: Easy"
 
         binding.btnBack.setOnClickListener {

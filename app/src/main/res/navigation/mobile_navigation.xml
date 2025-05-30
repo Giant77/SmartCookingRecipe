@@ -60,7 +60,7 @@
     <!--    Recipe sub-section-->
     <fragment
         android:id="@+id/fragmentRecipeDetails"
-        android:name="com.example.smartcookingrecipe.ui.recipe.RecipeDetailsFragment"
+        android:name="com.example.smartcookingrecipe.ui.recipeDetails.RecipeDetailsFragment"
         tools:layout="@layout/fragment_recipe_detail"
         android:label="Recipe Information" >
 
@@ -74,7 +74,7 @@
 
     <fragment
         android:id="@+id/fragmentRecipeSteps"
-        android:name="com.example.smartcookingrecipe.ui.recipe.RecipeStepsFragment"
+        android:name="com.example.smartcookingrecipe.ui.recipeDetails.RecipeStepsFragment"
         tools:layout="@layout/fragment_recipe_steps"
         android:label="Recipe Steps" >
 
@@ -85,13 +85,13 @@
 
     <fragment
         android:id="@+id/fragmentRecipeIngredients"
-        android:name="com.example.smartcookingrecipe.ui.recipe.RecipeIngredientsFragment"
+        android:name="com.example.smartcookingrecipe.ui.recipeDetails.RecipeIngredientsFragment"
         tools:layout="@layout/fragment_ingredient_checklist"
         android:label="Recipe Ingredients" />
 
     <fragment
         android:id="@+id/fragmentPostCooking"
-        android:name="com.example.smartcookingrecipe.ui.recipe.FinishCookingFragment"
+        android:name="com.example.smartcookingrecipe.ui.recipeDetails.FinishCookingFragment"
         tools:layout="@layout/fragment_post_cooking"
         android:label="Finish Cooking" />
 </navigation>

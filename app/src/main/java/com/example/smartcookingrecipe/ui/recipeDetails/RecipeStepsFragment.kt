@@ -1,4 +1,4 @@
-package com.example.smartcookingrecipe.ui.recipe
+package com.example.smartcookingrecipe.ui.recipeDetails
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -54,11 +54,10 @@ class RecipeStepsFragment : Fragment() {
 
         // TODO: Replace with JSON data from database
         val instructions = listOf(
-            "Preheat the oven to 180°C.",
-            "Mix flour and sugar in a bowl.",
-            "Add eggs and stir until smooth.",
-            "Pour into a pan and bake for 30 minutes.",
-            "Let it cool before serving."
+            "Prep the Chicken. Marinate the chicken with olive oil and spices (garlic powder, paprika, salt, pepper) for at least 15 minutes. If you have time, let it sit in the fridge for 1–2 hours for deeper flavor.",
+            "Cook the Chicken. Grill or Pan-Sear: Heat a grill pan or skillet over medium-high heat. Cook the chicken for 5–6 minutes per side until it reaches an internal temp of 165°F (75°C).Optionally, melt cheese on top in the last 30 seconds of cooking.",
+            "Toast the Bun. Lightly butter the inside of the bun and toast on a pan or toaster for that golden crisp edge.",
+            "Assemble the Sandwich. Layer bottom bun → sauce → lettuce → tomato → chicken → more sauce (if desired) → top bun."
         )
 
         val totalSteps = instructions.size

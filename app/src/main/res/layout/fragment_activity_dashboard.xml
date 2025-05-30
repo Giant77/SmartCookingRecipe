@@ -157,7 +157,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Mediterranean Quinoa Bowl"
+                        android:text="Classic Chicken Sandwich"
                         android:textStyle="bold"
                         android:textSize="16sp"
                         android:layout_marginBottom="4dp"/>
@@ -165,7 +165,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="25 min  ·  Easy  ·  420 cal"
+                        android:text="Prep: 10 min | Cook: 15 min | Difficulty: Easy"
                         android:textSize="12sp"
                         android:textColor="#777777"
                         android:layout_marginBottom="8dp"/>
@@ -173,7 +173,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="A protein-packed bowl with quinoa, chickpeas, cucumber, tomatoes, and feta cheese, dressed with lemon and olive oil."
+                        android:text="A straightforward, flavorful chicken sandwich built on simple techniques and staple ingredients. Marinated chicken, infused with garlic and paprika, is seared or grilled for maximum flavor. Cheese optional. Served on a toasted, buttered bun with crisp lettuce, fresh tomato, and sauce of choice. Balanced in texture and taste. Efficient execution with minimal complexity."
                         android:textSize="14sp"
                         android:layout_marginBottom="12dp"/>
 
