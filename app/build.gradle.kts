@@ -1,10 +1,18 @@
 import java.util.Properties
+import java.io.File
+
+val properties = Properties()
+val localPropertiesFile = File(rootProject.rootDir, "local.properties")
 
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    kotlin("plugin.serialization") version "1.9.24"
 }
 
+if (localPropertiesFile.exists()) {
+    properties.load(localPropertiesFile.inputStream())
+}
 android {
     namespace = "com.example.smartcookingrecipe"
     compileSdk = 35
@@ -18,14 +26,8 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
-        val properties = Properties()
-        val localPropertiesFile = File(rootProject.rootDir, "local.properties")
-        if (localPropertiesFile.exists()) {
-            properties.load(localPropertiesFile.inputStream())
-        }
-
-        buildConfigField("String", "SUPABASE_ANON_KEY", properties.getProperty("SUPABASE_ANON_KEY", ""))
-        buildConfigField("String", "SUPABASE_URL", properties.getProperty("SUPABASE_URL", ""))
+        buildConfigField("String", "SUPABASE_URL", "\"${properties.getProperty("SUPABASE_URL", "")}\"")
+        buildConfigField("String", "SUPABASE_ANON_KEY", "\"${properties.getProperty("SUPABASE_ANON_KEY", "")}\"")
     }
 
     buildTypes {
@@ -67,6 +69,7 @@ dependencies {
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
 
+    val ktorVersion = "3.1.0"
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1")
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.5.1")
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
@@ -74,5 +77,9 @@ dependencies {
     implementation("io.github.jan-tennert.supabase:postgrest-kt:3.1.0")
     implementation("io.github.jan-tennert.supabase:storage-kt:3.1.0")
     implementation("io.github.jan-tennert.supabase:auth-kt:3.1.0")
+    implementation("io.ktor:ktor-client-android:$ktorVersion")
+    implementation("io.ktor:ktor-client-core:$ktorVersion")
+    implementation("io.ktor:ktor-utils:$ktorVersion")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.3")
 }
 
