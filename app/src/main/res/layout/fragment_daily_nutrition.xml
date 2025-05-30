@@ -39,7 +39,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:textAppearance="?attr/textAppearanceSubtitle1"
-            tools:text="April 5, 2025"
+            android:text="April 29, 2025"
             app:layout_constraintTop_toBottomOf="@id/text_nutrition_tracking_title"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>
@@ -82,7 +82,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?attr/textAppearanceHeadline4"
-                    tools:text="1850 / 2200 kcal"/>
+                    android:text="1850 / 2200 kcal"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -100,7 +100,7 @@
                         android:id="@+id/text_summary_protein"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        tools:text="120g / 150g"/>
+                        android:text="120g / 150g"/>
 
                 </LinearLayout>
 
@@ -120,7 +120,7 @@
                         android:id="@+id/text_summary_carbs"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        tools:text="200g / 250g"/>
+                        android:text="200g / 250g"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -137,7 +137,7 @@
                     <TextView android:id="@+id/text_summary_fat"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        tools:text="60g / 70g"/>
+                        android:text="60g / 70g"/>
                 </LinearLayout>
 
             </LinearLayout>
@@ -153,15 +153,16 @@
             app:layout_constraintTop_toBottomOf="@id/card_nutrition_summary"
             app:layout_constraintStart_toStartOf="parent"/>
 
-        <View
+        <ImageView
             android:id="@+id/placeholder_pie_chart"
             android:layout_width="200dp"
             android:layout_height="200dp"
             android:layout_marginTop="16dp"
-            android:background="@android:color/holo_blue_light"
+            android:scaleType="centerInside"
+            android:src="@drawable/img_pie_chart"
             app:layout_constraintTop_toBottomOf="@id/text_charts_title"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            app:layout_constraintEnd_toEndOf="parent" />
 
         <TextView
             android:id="@+id/text_meal_log_title"
@@ -173,16 +174,49 @@
             app:layout_constraintTop_toBottomOf="@id/placeholder_pie_chart"
             app:layout_constraintStart_toStartOf="parent"/>
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycler_view_logged_meals"
-            android:layout_width="0dp"
+        <TextView
+            android:id="@+id/meal"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:nestedScrollingEnabled="false"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:layout_constraintTop_toBottomOf="@id/text_meal_log_title"
+            android:text="Classic Peanut Butter Toast"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            app:layout_constraintTop_toBottomOf="@+id/text_meal_log_title" />
+
+        <TextView
+            android:id="@+id/meal1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Traditional Indonesian Chicken Soto"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/meal" />
+
+        <TextView
+            android:id="@+id/meal2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Spicy Smashed Chicken Rice Box"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/meal1" />
+
+        <!--        <androidx.recyclerview.widget.RecyclerView-->
+<!--            android:id="@+id/recycler_view_logged_meals"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="8dp"-->
+<!--            android:nestedScrollingEnabled="false"-->
+<!--            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/text_meal_log_title"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"/>-->
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>

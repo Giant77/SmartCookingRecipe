@@ -15,7 +15,12 @@
 
         <action
             android:id="@+id/act_home_to_recipeDetails"
-            app:destination="@id/fragmentRecipeDetails" />
+            app:destination="@id/fragmentRecipeDetails" >
+
+            <argument
+                android:name="recipeId"
+                app:argType="long" />
+        </action>
     </fragment>
 
     <fragment

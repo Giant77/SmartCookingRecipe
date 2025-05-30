@@ -157,10 +157,10 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Classic Chicken Sandwich"
+                        android:text="Classic Peanut Butter Toast"
                         android:textStyle="bold"
                         android:textSize="16sp"
-                        android:layout_marginBottom="4dp"/>
+                        android:layout_marginBottom="4dp" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -173,7 +173,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="A straightforward, flavorful chicken sandwich built on simple techniques and staple ingredients. Marinated chicken, infused with garlic and paprika, is seared or grilled for maximum flavor. Cheese optional. Served on a toasted, buttered bun with crisp lettuce, fresh tomato, and sauce of choice. Balanced in texture and taste. Efficient execution with minimal complexity."
+                        android:text="A timeless and comforting breakfast or snack, featuring perfectly toasted bread generously spread with creamy peanut butter, offering a delightful combination of crunchy texture and rich flavor."
                         android:textSize="14sp"
                         android:layout_marginBottom="12dp"/>
 
