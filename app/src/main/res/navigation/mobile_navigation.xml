@@ -12,6 +12,10 @@
         android:name="com.example.smartcookingrecipe.ui.home.HomeFragment"
         android:label="@string/title_home"
         tools:layout="@layout/fragment_activity_dashboard" >
+
+        <action
+            android:id="@+id/act_home_to_recipeDetails"
+            app:destination="@id/fragmentRecipeDetails" />
     </fragment>
 
     <fragment
@@ -40,7 +44,7 @@
         android:label="@string/title_nutrition"
         tools:layout="@layout/fragment_daily_nutrition" />
 
-<!--    Misc-->
+    <!--    Record Ingredients sub-section-->
     <fragment
         android:id="@+id/fragmentRecordIngredients"
         android:name="com.example.smartcookingrecipe.ui.ingredients.RecordIngredientsFragment"
@@ -51,5 +55,51 @@
         android:id="@+id/fragmentIngredientsList"
         android:name="com.example.smartcookingrecipe.ui.ingredients.CheckIngredientsFragment"
         tools:layout="@layout/fragment_inventory_list"
-        android:label="Record Ingredients" />
+        android:label="Ingredients List" />
+
+    <!--    Recipe sub-section-->
+    <fragment
+        android:id="@+id/fragmentRecipeDetails"
+        android:name="com.example.smartcookingrecipe.ui.recipeDetails.RecipeDetailsFragment"
+        tools:layout="@layout/fragment_recipe_detail"
+        android:label="Recipe Information" >
+
+        <action
+            android:id="@+id/act_recipeDetails_to_recipeSteps"
+            app:destination="@id/fragmentRecipeSteps" />
+        <action
+            android:id="@+id/act_recipeDetails_to_recipeIngredients"
+            app:destination="@id/fragmentRecipeIngredients" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentRecipeSteps"
+        android:name="com.example.smartcookingrecipe.ui.recipeDetails.RecipeStepsFragment"
+        tools:layout="@layout/fragment_recipe_steps"
+        android:label="Recipe Steps" >
+
+        <action
+            android:id="@+id/act_recipeSteps_to_postCooking"
+            app:destination="@id/fragmentPostCooking" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentRecipeIngredients"
+        android:name="com.example.smartcookingrecipe.ui.recipeDetails.RecipeIngredientsFragment"
+        tools:layout="@layout/fragment_ingredient_checklist"
+        android:label="Recipe Ingredients" />
+
+    <fragment
+        android:id="@+id/fragmentPostCooking"
+        android:name="com.example.smartcookingrecipe.ui.recipeDetails.FinishCookingFragment"
+        tools:layout="@layout/fragment_post_cooking"
+        android:label="Finish Cooking" >
+
+        <action
+            android:id="@+id/act_postCooking_to_home"
+            app:destination="@id/navigation_home" />
+        <action
+            android:id="@+id/act_postCooking_to_nutrition"
+            app:destination="@id/navigation_nutrition" />
+    </fragment>
 </navigation>

@@ -3,8 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".features.recipes.ui.detail.RecipeDetailFragment">
+    android:layout_height="match_parent" >
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -25,7 +24,7 @@
 
         <!-- Tombol Back Menumpuk di Atas Gambar -->
         <ImageButton
-            android:id="@+id/backButton"
+            android:id="@+id/btn_back"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_margin="16dp"
@@ -66,7 +65,7 @@
 
         <!-- Tombol Cek Bahan -->
         <Button
-            android:id="@+id/button_ingredient_checklist"
+            android:id="@+id/btn_ingredient_checklist"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="16dp"
@@ -79,7 +78,7 @@
 
         <!-- Tombol Mulai Memasak -->
         <Button
-            android:id="@+id/button_start_cooking"
+            android:id="@+id/btn_start_cooking"
             style="@style/Widget.MaterialComponents.Button"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -89,7 +88,7 @@
             app:icon="@android:drawable/stat_notify_chat"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/button_ingredient_checklist" />
+            app:layout_constraintTop_toBottomOf="@id/btn_ingredient_checklist" />
 
         <!-- Info Meta Resep -->
         <TextView
@@ -100,7 +99,7 @@
             android:layout_marginTop="16dp"
             android:textAppearance="?attr/textAppearanceCaption"
             tools:text="Prep: 10 min | Cook: 15 min | Difficulty: Easy"
-            app:layout_constraintTop_toBottomOf="@id/button_start_cooking"
+            app:layout_constraintTop_toBottomOf="@id/btn_start_cooking"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>
 
