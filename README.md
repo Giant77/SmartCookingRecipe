@@ -9,7 +9,7 @@
 
 **Deskripsi Project:**
 
-Aplikasi resep memasak, dengan beberapa fitur utama seperti 'Prepare meal' yang menampilkan beberapa daftar berdasarkan kategori, seperti sarapan, makanan sehat, protein tinggi, dll. Setelah memilih makanan, aplikasi menampilkan deskripsi singkat dan menampilkan daftar bahan makanan yang akan digunakan untuk membuat resep, kemudian aplikasi ini akan menampilkan langkah-langkah memasak di halaman langkahnya masing-masing. Setelah proses memasak selesai, aplikasi ini akan menampilkan informasi nutrisi dari makanan yang dimasak.
+Aplikasi resep memasak, dengan beberapa fitur utama seperti 'Prepare meal' yang menampilkan beberapa daftar berdasarkan kategori, seperti sarapan, makanan sehat, makanan cepat, dll. Setelah memilih menu, aplikasi menampilkan deskripsi singkat dan menampilkan daftar bahan makanan yang akan digunakan untuk membuat resep, kemudian aplikasi ini akan menampilkan langkah-langkah memasak di halaman langkahnya masing-masing. Setelah proses memasak selesai, aplikasi ini akan menampilkan informasi nutrisi dari makanan yang dimasak.
 
 Kemudian ada fitur 'Ingredients inventory' yang dapat melacak bahan makanan yang digunakan pengguna. Pengguna dapat memasukkan informasi bahan masakan secara manual. Kemudian pengguna dapat melihat bahan makanan mereka dalam daftar bahan makanan, pengguna dapat mengetahui kapan tanggal kadaluarsa makanan sehingga memaksimal semua bahan makanan akan tergunakan dan tidak ada yang terbuang sia-sia.
 
