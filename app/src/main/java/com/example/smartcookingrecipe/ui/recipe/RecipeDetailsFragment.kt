@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.smartcookingrecipe.R
@@ -24,6 +25,14 @@ class RecipeDetailsFragment : Fragment() {
     ): View {
         _binding = FragmentRecipeDetailBinding.inflate(inflater, container, false)
         val root: View = binding.root
+
+        val recipeTitle: TextView = binding.textRecipeDetailTitle
+        val recipeDescription: TextView = binding.textRecipeDetailDescription
+        val recipeMetaInfo: TextView = binding.textRecipeMetaInfo
+
+        recipeTitle.text = "Mediterranean Quinoa Bowl"
+        recipeDescription.text = "A protein-packed bowl with quinoa, chickpeas, cucumber, tomatoes, and feta cheese, dressed with lemon and olive oil."
+        recipeMetaInfo.text = "Prep: 10 min | Cook: 15 min | Difficulty: Easy"
 
         binding.btnBack.setOnClickListener {
             findNavController().popBackStack() // Close this page

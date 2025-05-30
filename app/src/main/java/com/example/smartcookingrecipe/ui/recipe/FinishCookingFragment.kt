@@ -5,13 +5,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
-import com.example.smartcookingrecipe.databinding.FragmentIngredientChecklistBinding
+import com.example.smartcookingrecipe.databinding.FragmentPostCookingBinding
 
 
-class RecipeIngredientsFragment : Fragment() {
+class FinishCookingFragment : Fragment() {
 
-    private var _binding: FragmentIngredientChecklistBinding? = null
+    private var _binding: FragmentPostCookingBinding? = null
 
     // This property is only valid between onCreateView and onDestroyView.
     private val binding get() = _binding!!
@@ -21,16 +20,16 @@ class RecipeIngredientsFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentIngredientChecklistBinding.inflate(inflater, container, false)
+        _binding = FragmentPostCookingBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        binding.btnBack.setOnClickListener {
-            findNavController().popBackStack() // Close this page
-        }
-
-        binding.btnProceedToSteps.setOnClickListener {
-            findNavController().popBackStack() // Close this page
-        }
+//        binding.btnBack.setOnClickListener {
+//            findNavController().popBackStack() // Close this page
+//        }
+//
+//        binding.btnProceedToSteps.setOnClickListener {
+//            findNavController().popBackStack() // Close this page
+//        }
 
         return root
     }

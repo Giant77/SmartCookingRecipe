@@ -17,6 +17,21 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:contentDescription="content_desc_step_image"/>
 
+    <!-- Tombol Back Menumpuk di Atas Gambar -->
+    <ImageButton
+        android:id="@+id/btn_back"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_margin="16dp"
+        android:background="@android:color/transparent"
+        android:padding="8dp"
+        android:src="@drawable/arrow_back"
+        android:contentDescription="Back"
+        android:scaleType="centerInside"
+        app:tint="@android:color/white"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <TextView
         android:id="@+id/text_step_number"
         android:layout_width="wrap_content"
