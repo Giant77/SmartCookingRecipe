@@ -5,15 +5,15 @@ import kotlinx.serialization.json.JsonElement
 
 @Serializable
 data class Recipe(
-    val recipe_id: Long? = null,
+    val recipe_id: Long = 0,
     val title: String,
-    val description: String? = null,
-    val category: String? = null,
-    val cooking_time: Int? = null,
-    val step: JsonElement? = null,
-    val protein: Float? = null,
-    val fat: Float? = null,
-    val carbs: Float? = null,
-    val calory: Float? = null,
-    val image_url: String? = null,
+    val description: String?,
+    val category: String?,
+    val cooking_time: Int?,
+    val step: String?,
+    val protein: Float?,
+    val fat: Float?,
+    val carbs: Float?,
+    val calory: Float?,
+    val image_url: String?
 )

@@ -2,38 +2,40 @@ package com.example.smartcookingrecipe.repository
 
 import com.example.smartcookingrecipe.model.Recipe
 import io.github.jan.supabase.SupabaseClient
-import io.github.jan.supabase.postgrest.from
+import io.github.jan.supabase.postgrest.postgrest
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 
 class RecipeRepository(private val supabase: SupabaseClient) {
 
-    suspend fun getAllRecipes(): List<Recipe> {
-        return supabase.from("recipes")
+    suspend fun getAll(): List<Recipe> = withContext(Dispatchers.IO) {
+        val response = supabase.postgrest["recipes"].select()
+        response.decodeList<Recipe>()
+    }
+
+    suspend fun getById(id: Long): Recipe? = withContext(Dispatchers.IO) {
+        val response = supabase.postgrest["recipes"]
             .select()
-            .decodeList<Recipe>()
+            .eq("recipe_id", id)
+            .single()
+        response.decode<Recipe>()
     }
 
-    suspend fun getRecipeById(id: Long): Recipe? {
-        return supabase.from("recipes")
-            .select {
-                filter("recipe_id", "eq", id)
+    suspend fun insert(recipe: Recipe) = withContext(Dispatchers.IO) {
+        supabase.postgrest["recipes"].insert(recipe)
+    }
+
+    suspend fun update(recipe: Recipe) = withContext(Dispatchers.IO) {
+        supabase.postgrest["recipes"]
+            .update(recipe) {
+                eq("recipe_id", recipe.recipe_id)
             }
-            .decodeSingleOrNull<Recipe>()
     }
 
-    private fun filter(block: String, s: String, id: Long) {
-
-    }
-
-    suspend fun addRecipe(recipe: Recipe): Recipe {
-        return supabase.from("recipes")
-            .insert(recipe)
-            .decodeSingle<Recipe>()
-    }
-
-    suspend fun deleteRecipe(id: Long) {
-        supabase.from("recipes")
-            .delete {
-                filter("recipe_id", "eq", id)
-            }
+    suspend fun delete(id: Long) = withContext(Dispatchers.IO) {
+        supabase.postgrest["recipes"].delete {
+            eq("recipe_id", id)
+        }
     }
 }
+

@@ -1,25 +1,40 @@
 package com.example.smartcookingrecipe.viewmodel
 
-import android.util.Log
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
-import com.example.smartcookingrecipe.repository.RecipeRepository
+import androidx.lifecycle.*
 import com.example.smartcookingrecipe.model.Recipe
+import com.example.smartcookingrecipe.repository.RecipeRepository
 import kotlinx.coroutines.launch
 
 class RecipeViewModel(private val repository: RecipeRepository) : ViewModel() {
+
     private val _recipes = MutableLiveData<List<Recipe>>()
     val recipes: LiveData<List<Recipe>> = _recipes
 
-    fun loadRecipes() {
+    fun fetchRecipes() {
         viewModelScope.launch {
-            try {
-                _recipes.value = repository.getAllRecipes()
-            } catch (e: Exception) {
-                Log.e("RecipeViewModel", "Error loading recipes: ${e.message}")
-            }
+            _recipes.value = repository.getAll()
+        }
+    }
+
+    fun addRecipe(recipe: Recipe) {
+        viewModelScope.launch {
+            repository.insert(recipe)
+            fetchRecipes()
+        }
+    }
+
+    fun updateRecipe(recipe: Recipe) {
+        viewModelScope.launch {
+            repository.update(recipe)
+            fetchRecipes()
+        }
+    }
+
+    fun removeRecipe(id: Long) {
+        viewModelScope.launch {
+            repository.delete(id)
+            _recipes.value = _recipes.value?.filterNot { it.recipe_id == id }
         }
     }
 }
+

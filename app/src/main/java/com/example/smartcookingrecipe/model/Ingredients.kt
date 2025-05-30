@@ -6,5 +6,6 @@ import kotlinx.serialization.Serializable
 data class Ingredient(
     val ingredient_id: Long? = null,
     val name: String,
-    val unit: Long? = null
+    val unit: String? = "pcs" // default value sesuai Supabase enum default
 )
+
