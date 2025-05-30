@@ -3,22 +3,22 @@ package com.example.smartcookingrecipe.repository
 import com.example.smartcookingrecipe.model.Ingredient
 import io.github.jan.supabase.SupabaseClient
 import io.github.jan.supabase.postgrest.from
-import io.github.jan.supabase.postgrest.rpc.decodeList
-import io.github.jan.supabase.postgrest.rpc.decodeSingle
-import io.github.jan.supabase.postgrest.rpc.decodeSingleOrNull
+import io.github.jan.supabase.postgrest.query.Columns
 
 class IngredientRepository(private val supabase: SupabaseClient) {
 
     suspend fun getAllIngredients(): List<Ingredient> {
-        return supabase.from("ingredients")
-            .select()
+         return supabase.from("ingredients")
+            .select{ Columns.ALL }
             .decodeList<Ingredient>()
     }
 
     suspend fun getIngredientById(id: Long): Ingredient? {
         return supabase.from("ingredients")
             .select {
-                filter("ingredient_id", "eq", id)
+                filter{
+                    eq("ingredient_id", id)
+                }
             }
             .decodeSingleOrNull()
     }

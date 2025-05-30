@@ -2,6 +2,7 @@ package com.example.smartcookingrecipe.repository
 
 import com.example.smartcookingrecipe.model.Recipe
 import io.github.jan.supabase.SupabaseClient
+import io.github.jan.supabase.postgrest.from
 import io.github.jan.supabase.postgrest.postgrest
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -13,29 +14,39 @@ class RecipeRepository(private val supabase: SupabaseClient) {
         response.decodeList<Recipe>()
     }
 
-    suspend fun getById(id: Long): Recipe? = withContext(Dispatchers.IO) {
-        val response = supabase.postgrest["recipes"]
-            .select()
-            .eq("recipe_id", id)
-            .single()
-        response.decode<Recipe>()
-    }
+//    suspend fun getById(id: Long): Recipe? = withContext(Dispatchers.IO) {
+//        val response = supabase.postgrest["recipes"]
+//            .select {
+//                filter {
+//                    eq("recipe_id", id)
+//                    single()
+//                }
+//            }
+//        response.decode<Recipe>()
+//    }
 
     suspend fun insert(recipe: Recipe) = withContext(Dispatchers.IO) {
         supabase.postgrest["recipes"].insert(recipe)
     }
 
     suspend fun update(recipe: Recipe) = withContext(Dispatchers.IO) {
-        supabase.postgrest["recipes"]
+        supabase
+            .from("recipes")
             .update(recipe) {
-                eq("recipe_id", recipe.recipe_id)
+                filter {
+                    eq("recipe_id", recipe.recipe_id)
+                }
             }
     }
 
     suspend fun delete(id: Long) = withContext(Dispatchers.IO) {
-        supabase.postgrest["recipes"].delete {
-            eq("recipe_id", id)
-        }
+        supabase
+            .from("recipes")
+            .delete {
+                filter{
+                    eq("recipe_id", id)
+                }
+            }
     }
 }
 

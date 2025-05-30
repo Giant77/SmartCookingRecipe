@@ -1,5 +1,4 @@
 import java.util.Properties
-import java.io.File
 
 val properties = Properties()
 val localPropertiesFile = File(rootProject.rootDir, "local.properties")
@@ -26,8 +25,8 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
-        buildConfigField("String", "SUPABASE_URL", "\"${properties.getProperty("SUPABASE_URL", "")}\"")
-        buildConfigField("String", "SUPABASE_ANON_KEY", "\"${properties.getProperty("SUPABASE_ANON_KEY", "")}\"")
+        buildConfigField("String", "SUPABASE_URL", "\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InR2bmtpcmh3dGF6d292Y29pb291Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDg1MDgxMDcsImV4cCI6MjA2NDA4NDEwN30.hd5MbnI-WTzLMm3UOgpYdGJc1r-1fe6FTY29G-yDUT4\"")
+        buildConfigField("String", "SUPABASE_ANON_KEY", "\"https://tvnkirhwtazwovcoioou.supabase.co\"")
     }
 
     buildTypes {
