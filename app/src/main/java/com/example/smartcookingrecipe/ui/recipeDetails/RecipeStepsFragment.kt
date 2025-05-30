@@ -54,10 +54,10 @@ class RecipeStepsFragment : Fragment() {
 
         // TODO: Replace with JSON data from database
         val instructions = listOf(
-            "Prep the Chicken. Marinate the chicken with olive oil and spices (garlic powder, paprika, salt, pepper) for at least 15 minutes. If you have time, let it sit in the fridge for 1–2 hours for deeper flavor.",
-            "Cook the Chicken. Grill or Pan-Sear: Heat a grill pan or skillet over medium-high heat. Cook the chicken for 5–6 minutes per side until it reaches an internal temp of 165°F (75°C).Optionally, melt cheese on top in the last 30 seconds of cooking.",
-            "Toast the Bun. Lightly butter the inside of the bun and toast on a pan or toaster for that golden crisp edge.",
-            "Assemble the Sandwich. Layer bottom bun → sauce → lettuce → tomato → chicken → more sauce (if desired) → top bun."
+            "Take a slice of your favorite white bread. Using a knife or spatula, generously spread a layer of creamy or crunchy peanut butter evenly across one side of the bread, ensuring it reaches all corners for maximum flavor in every bite.",
+            "Place the prepared bread in a toaster or under a broiler. Toast until it turns a beautiful golden-brown color and achieves a satisfying crispness. Be careful not to burn it. Serve immediately while warm for the best experience.",
+//            "Toast the Bun. Lightly butter the inside of the bun and toast on a pan or toaster for that golden crisp edge.",
+//            "Assemble the Sandwich. Layer bottom bun → sauce → lettuce → tomato → chicken → more sauce (if desired) → top bun."
         )
 
         val totalSteps = instructions.size
