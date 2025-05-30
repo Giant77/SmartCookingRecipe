@@ -1,5 +1,3 @@
-package com.example.smartcookingrecipe.adapter
-
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -7,9 +5,9 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.smartcookingrecipe.R
-import com.example.smartcookingrecipe.model.Inventory
+import com.example.smartcookingrecipe.model.InventoryDisplayItem
 
-class InventoryAdapter(private var items: List<Inventory>) :
+class InventoryAdapter(private var items: List<InventoryDisplayItem>) :
     RecyclerView.Adapter<InventoryAdapter.InventoryViewHolder>() {
 
     class InventoryViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -27,16 +25,17 @@ class InventoryAdapter(private var items: List<Inventory>) :
 
     override fun onBindViewHolder(holder: InventoryViewHolder, position: Int) {
         val item = items[position]
-        holder.nameText.text = "Ingredient ID: ${item.ingredientId}"
+        holder.nameText.text = item.name
         holder.quantityText.text = "Quantity: ${item.quantity ?: 0}"
         holder.expiryText.text = "Expires: ${item.expirationDate ?: "-"}"
-        holder.image.setImageResource(R.drawable.cook) // Optional: dynamic loading
+        holder.image.setImageResource(R.drawable.cook)
     }
 
     override fun getItemCount(): Int = items.size
 
-    fun updateData(newItems: List<Inventory>) {
+    fun updateData(newItems: List<InventoryDisplayItem>) {
         items = newItems
         notifyDataSetChanged()
     }
 }
+

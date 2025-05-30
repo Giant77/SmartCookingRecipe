@@ -1,22 +1,34 @@
 package com.example.smartcookingrecipe.model
 
-import com.google.gson.annotations.SerializedName
+import kotlinx.serialization.SerialName
+import kotlinx.serialization.Serializable
 
+
+@Serializable
 data class Inventory(
-    @SerializedName("inventory_id")
+    @SerialName("inventory_id")
     val inventoryId: Long,
 
-    @SerializedName("user_id")
+    @SerialName("user_id")
     val userId: String,
 
-    @SerializedName("ingredient_id")
+    @SerialName("ingredient_id")
     val ingredientId: Long? = null,
 
     val quantity: Long? = null,
 
-    @SerializedName("expiration_date")
-    val expirationDate: String? = null, // Format ISO: "YYYY-MM-DD"
+    @SerialName("expiration_date")
+    val expirationDate: String? = null,
 
-    @SerializedName("added_at")
+    @SerialName("added_at")
     val addedAt: String? = null
+)
+
+
+
+data class InventoryDisplayItem(
+//    val inventoryId: Long,
+    val name: String, // from Ingredient.name
+    val quantity: String?,
+    val expirationDate: String?
 )

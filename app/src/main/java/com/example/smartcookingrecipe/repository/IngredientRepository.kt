@@ -3,13 +3,14 @@ package com.example.smartcookingrecipe.repository
 import com.example.smartcookingrecipe.model.Ingredient
 import io.github.jan.supabase.SupabaseClient
 import io.github.jan.supabase.postgrest.from
-import io.github.jan.supabase.postgrest.query.Columns
 
 class IngredientRepository(private val supabase: SupabaseClient) {
 
     suspend fun getAllIngredients(): List<Ingredient> {
          return supabase.from("ingredients")
-            .select{ Columns.ALL }
+            .select{
+
+            }
             .decodeList<Ingredient>()
     }
 
